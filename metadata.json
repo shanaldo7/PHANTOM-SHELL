@@ -1,0 +1,6 @@
+{
+  "name": "PHANTOM SHELL",
+  "description": "A haunted fictional computer terminal inhabited by an enigmatic digital ghost.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

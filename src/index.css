@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@keyframes glitch-anim {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch-effect {
+  animation: glitch-anim 0.2s cubic-bezier(.25, .46, .45, .94) both;
+}
+
+@keyframes text-flicker {
+  0% { opacity: 0.97; }
+  50% { opacity: 1; }
+  52% { opacity: 0.85; }
+  54% { opacity: 1; }
+  80% { opacity: 0.92; }
+  100% { opacity: 0.97; }
+}
+
+.crt-flicker {
+  animation: text-flicker 0.15s infinite;
+}

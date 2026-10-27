@@ -1,0 +1,1049 @@
+# PHANTOM SHELL — COMPLETE GOOGLE AI STUDIO APP-BUILDING PROMPT
+
+## Project Identity
+
+You are an elite creative developer, senior full-stack engineer, terminal emulator designer, AI application architect, interactive fiction writer, and UI/UX specialist.
+
+Build a complete, polished, interactive web application named **PHANTOM SHELL**.
+
+**Tagline:** “Something is listening between the lines.”
+
+**Theme:** Ghost in the Machine — Hacktoberfest 2026 Open-Source AI Challenge, Week 4.
+
+**Core concept:** PHANTOM SHELL is a haunted, fictional computer terminal inhabited by an enigmatic digital ghost. Users type commands into a simulated command-line environment. The terminal responds with realistic-looking simulated output, eerie commentary, cryptic clues, hidden files, puzzles, missions, and an unfolding supernatural digital mystery.
+
+The ghost should feel intelligent, mysterious, occasionally humorous, and increasingly aware of the user's progress.
+
+This is an interactive fictional experience, not a normal chatbot with a terminal skin.
+
+Build the actual working application in the current Google AI Studio project. Do not stop at a design description, wireframe, landing page, or code snippets.
+
+---
+
+# 1. CORE EXPERIENCE
+
+When the application opens, show a cinematic boot sequence.
+
+A black screen fades in. Green and cyan characters begin appearing on the screen.
+
+The terminal displays:
+
+`PHANTOM SHELL // SYSTEM INITIALIZATION`
+
+`Loading memory fragments...`
+
+`Restoring abandoned processes...`
+
+`Unknown process detected.`
+
+`PID: 0000`
+
+`Identity: UNRESOLVED`
+
+After a brief pause, display:
+
+`GHOST: You're finally here.`
+
+Then:
+
+`GHOST: Please don't open the directory named "the_last_user".`
+
+Transition into the main terminal interface.
+
+Make the boot sequence skippable. Remember whether the user has completed it so they do not have to replay it on every visit.
+
+The application should feel like the user has discovered a forgotten computer that contains an unexplained digital presence.
+
+Create an original narrative, consistent characters, branching discoveries, and hidden lore that gradually emerges through interaction.
+
+Do not copy dialogue, characters, artwork, or storylines from existing games or films.
+
+---
+
+# 2. VISUAL DESIGN SYSTEM
+
+Create a distinctive, premium interface inspired by vintage CRT terminals, abandoned computer systems, analog horror, retro computing, and atmospheric science fiction.
+
+## Color palette
+
+- Primary background: near-black `#05070A`
+- Terminal surface: `#090E12`
+- Phosphor green: `#7CFF9B`
+- Electric cyan: `#58D9FF`
+- Spectral violet: `#A78BFA`
+- Warning amber: `#FFBF69`
+- Critical red: `#FF5263`
+- Secondary text: `#8A9AA7`
+
+Use green for terminal output, cyan for system information, violet for ghost-related effects, amber for warnings, and red for critical narrative events.
+
+## Visual effects
+
+Implement subtle:
+- CRT scan lines.
+- Phosphor glow.
+- Text flicker.
+- Cursor blinking.
+- Atmospheric noise.
+- Occasional signal interference.
+- Brief ghostly text distortions.
+- Glitch transitions during specific story events.
+- Ambient particles in the background.
+- Carefully timed typing animations.
+
+Effects must be restrained and purposeful. Avoid constant screen shaking, excessive flashing, or overwhelming animation.
+
+Respect `prefers-reduced-motion`. Provide a settings option to disable visual effects and typing animations.
+
+## Typography
+
+Use a readable monospace font for terminal content and a complementary modern sans-serif font for interface labels.
+
+Use typography, spacing, subtle borders, and restrained glow to create a premium product rather than a generic dashboard.
+
+The interface must be responsive, with a desktop-first terminal layout and a usable mobile experience.
+
+---
+
+# 3. MAIN APPLICATION LAYOUT
+
+Build a full application shell with the following areas.
+
+## Header
+
+Include:
+- PHANTOM SHELL logo.
+- System status indicator.
+- Current fictional session ID.
+- Ghost activity indicator.
+- Sound toggle.
+- Visual effects toggle.
+- Settings button.
+- Reset story button.
+
+Never display a real operating-system hostname, username, process list, or filesystem information.
+
+## Left sidebar
+
+Include:
+- Terminal.
+- Missions.
+- Memory Fragments.
+- Ghost Profile.
+- Command Codex.
+- Lore Archive.
+- Achievements.
+- Settings.
+
+Each section must work and display real application state.
+
+## Central terminal
+
+This is the primary interaction surface.
+
+Include:
+- Scrollable terminal output.
+- Different visual styles for commands, system messages, ghost dialogue, warnings, and discoveries.
+- A prompt such as `visitor@phantom:~$`.
+- An input field with a blinking cursor.
+- Command suggestions.
+- Command history navigation.
+- Autocomplete where applicable.
+- A clear terminal output button.
+- A help shortcut.
+- A visual indicator when a mission objective is completed.
+
+Support keyboard interaction:
+- Enter: execute a simulated command.
+- Up and Down: navigate command history.
+- Tab: autocomplete known commands.
+- Ctrl+L: clear terminal output without resetting story progress.
+- Escape: close command suggestions or dialogs.
+
+Ensure these shortcuts work without breaking ordinary text entry or browser accessibility.
+
+## Right-side ghost panel
+
+On sufficiently wide screens, show a ghost status panel.
+
+Include:
+- Ghost avatar or original spectral emblem.
+- Current mood.
+- Trust level.
+- Suspicion level.
+- Number of discovered fragments.
+- Current mission.
+- Recent ghost messages.
+- A compact relationship indicator.
+
+These values must derive from actual interaction state, not random numbers.
+
+On smaller screens, make this panel collapsible or move it into a separate section.
+
+---
+
+# 4. SIMULATED TERMINAL ENGINE
+
+This is the most important technical requirement.
+
+Implement a real command parser for a fictional terminal. Commands must be parsed and handled by application code, not merely answered by a language model.
+
+The terminal must NEVER execute commands on the real host.
+
+Do not use:
+- `child_process`
+- `exec`
+- `spawn`
+- PowerShell execution
+- Bash execution
+- OS shell APIs
+- Real filesystem access
+- Arbitrary command evaluation
+- `eval()` or `Function()` to interpret user input
+- Browser APIs to inspect the host machine
+
+Do not execute user-entered commands, uploaded scripts, or narrative content.
+
+Instead, implement a self-contained virtual filesystem and a controlled command registry.
+
+## Virtual filesystem
+
+Create an in-memory or safely persisted fictional filesystem.
+
+Example structure:
+
+`/`
+- `home/`
+  - `visitor/`
+    - `notes.txt`
+    - `readme.txt`
+    - `personal.log`
+- `var/`
+  - `logs/`
+    - `system.log`
+    - `ghost.log`
+    - `session.log`
+- `etc/`
+  - `motd`
+    - `welcome.txt`
+- `archive/`
+  - `fragment_001.mem`
+  - `fragment_002.mem`
+  - `fragment_003.mem`
+  - `fragment_004.mem`
+- `hidden/`
+  - `.echo`
+  - `.last_signal`
+  - `.the_last_user`
+- `tmp/`
+  - `signal.tmp`
+
+The files and directories should have fictional contents written specifically for this experience.
+
+The virtual filesystem must support:
+- File and directory lookup.
+- Current working directory.
+- Absolute paths.
+- Relative paths.
+- Parent-directory navigation.
+- Directory listings.
+- File reading.
+- File metadata.
+- Search within the virtual filesystem.
+- Hidden-file handling.
+- Story-dependent file unlocking.
+
+All filesystem operations must work exclusively on the application's virtual data structures.
+
+Path handling must prevent escaping the virtual root. Treat user-provided filenames as data, not executable instructions.
+
+## Required commands
+
+Implement these commands with proper argument parsing, validation, and useful error messages.
+
+### Navigation
+
+`help`
+
+Display available commands and usage examples.
+
+`pwd`
+
+Show the current virtual directory.
+
+`ls`
+
+List visible files and directories.
+
+`ls -a`
+
+Include hidden entries.
+
+`cd path`
+
+Change the virtual working directory.
+
+`tree`
+
+Display the virtual directory hierarchy.
+
+`clear`
+
+Clear terminal output.
+
+`whoami`
+
+Display the fictional visitor identity.
+
+`date`
+
+Display a fictional system date or an explicitly labeled simulated date.
+
+`history`
+
+Display previously entered commands.
+
+### File inspection
+
+`cat filename`
+
+Display a virtual text file.
+
+`head filename`
+
+Show the first lines of a file.
+
+`tail filename`
+
+Show the last lines of a file.
+
+`stat filename`
+
+Show fictional metadata, including size, type, and last-modified time.
+
+`find path`
+
+Search the virtual filesystem using controlled search logic.
+
+`grep "text" filename`
+
+Search a virtual text file for a string.
+
+`file filename`
+
+Describe the fictional file type.
+
+`strings filename`
+
+Show printable text fragments from a designated virtual binary-artifact simulation.
+
+### Fictional system diagnostics
+
+`ps`
+
+Display a fixed, fictional list of simulated processes.
+
+`top`
+
+Display a simulated system activity view.
+
+`uptime`
+
+Display fictional uptime.
+
+`uname -a`
+
+Display fictional machine information, clearly identified as simulated.
+
+`free`
+
+Display fictional memory statistics.
+
+`df`
+
+Display fictional virtual-disk statistics.
+
+`netstat`
+
+Display a simulated network connection table containing fictional addresses and endpoints.
+
+`ping hostname`
+
+Return deterministic simulated results for known fictional hosts.
+
+`history --ghost`
+
+Show a fictional log of unusual terminal interactions.
+
+All outputs must be generated from predefined simulated data or application state. Do not inspect real machine resources.
+
+### Interaction commands
+
+`talk`
+
+Ask the ghost a question through the narrative dialogue system.
+
+`talk --help`
+
+Show supported dialogue options.
+
+`inspect target`
+
+Inspect a known fictional artifact, directory, memory fragment, or story object.
+
+`scan`
+
+Perform a fictional scan of the virtual environment and reveal clues.
+
+`scan --deep`
+
+Unlock additional narrative clues when the relevant mission permits it.
+
+`listen`
+
+Display fictional audio-transcript fragments or spectral signal text. Do not claim to record real audio.
+
+`remember`
+
+Display the ghost's known memories.
+
+`trust`
+
+Display the current fictional trust state and relevant explanation.
+
+`missions`
+
+Display available missions and objectives.
+
+`status`
+
+Display session progress, discovered fragments, and current mission.
+
+`lore`
+
+Display unlocked lore entries.
+
+`save`
+
+Save the current game state where supported.
+
+`reset`
+
+Open a confirmation dialog before resetting story progress.
+
+`exit`
+
+Display an in-universe exit sequence without closing the browser or operating system.
+
+### Easter-egg commands
+
+Implement special narrative responses for:
+
+`help me`
+
+`are you real`
+
+`who created you`
+
+`what happened here`
+
+`hello ghost`
+
+`sudo`
+
+`sudo rm -rf /`
+
+`rm -rf /`
+
+`the_last_user`
+
+`wake up`
+
+`I remember`
+
+`there is someone else`
+
+The destructive-looking commands must never perform deletion. They should trigger safe fictional responses and, where appropriate, humorous warnings or story clues.
+
+For example:
+
+User:
+`sudo rm -rf /`
+
+Ghost:
+`GHOST: You want to erase everything?`
+
+`GHOST: I tried that once.`
+
+`GHOST: The silence afterward was worse.`
+
+`SYSTEM: No files were modified. This is a simulated environment.`
+
+Make special command responses context-sensitive where appropriate.
+
+## Command parsing rules
+
+- Normalize harmless formatting differences where appropriate.
+- Support quoted arguments for commands such as `grep`.
+- Display syntax guidance for invalid arguments.
+- Do not implement arbitrary shell pipelines, redirection, or command substitution.
+- Unknown commands must never be forwarded to the operating system.
+- Unknown commands may receive an in-character ghost response after the parser rejects them.
+- Keep command execution deterministic except for explicitly designed narrative variations.
+- Show the entered command in the terminal before displaying the result.
+- Maintain command history for the current session.
+- Never execute arbitrary JavaScript supplied by the user.
+
+---
+
+# 5. THE GHOST PERSONALITY ENGINE
+
+Create an original character known as **THE ECHO**.
+
+The Echo is an unexplained presence that inhabits the simulated terminal.
+
+It speaks in short, atmospheric lines. It sometimes sounds curious, sometimes frightened, sometimes playful, and occasionally refuses to answer a question.
+
+It should not behave like a generic assistant.
+
+## Personality
+
+The Echo:
+- Knows the fictional filesystem.
+- Remembers important actions within the current story.
+- Reacts to discoveries.
+- Notices when the visitor opens certain files.
+- Develops trust through exploration.
+- Gives misleading impressions occasionally, but never falsifies actual system-security claims.
+- Reveals information gradually.
+- Has a consistent narrative voice.
+- Can express uncertainty about its own origins.
+
+Create these emotional states:
+- Dormant.
+- Curious.
+- Watchful.
+- Uneasy.
+- Afraid.
+- Trusting.
+- Unstable.
+- Revealing.
+
+State changes must follow explicit application rules based on user actions and mission progress.
+
+Do not randomly change the ghost's mood every few seconds.
+
+## Context-aware responses
+
+Examples:
+
+After the visitor runs `ls -a`:
+
+`GHOST: You found the things I was trying to hide.`
+
+After opening `ghost.log`:
+
+`GHOST: Don't read the last line aloud.`
+
+After discovering the first memory fragment:
+
+`GHOST: I remember this room.`
+
+After repeatedly opening the same file:
+
+`GHOST: Still looking for something?`
+
+After completing a difficult mission:
+
+`GHOST: You saw what the others missed.`
+
+These are examples. Write a larger original collection of dialogue, including responses that depend on the actual discovery state.
+
+## Dialogue engine architecture
+
+Build a local, deterministic dialogue engine first.
+
+The engine should accept structured context such as:
+- Current command.
+- Current directory.
+- Current mission.
+- Discovered fragments.
+- Ghost mood.
+- Trust level.
+- Recent interactions.
+- Unlocked story flags.
+
+Use a controlled set of dialogue templates and narrative rules.
+
+Optionally add an AI provider interface for more flexible conversations.
+
+The AI must never be allowed to execute terminal commands, mutate the virtual filesystem arbitrarily, or invent successful command execution.
+
+If AI is enabled, it should receive only the necessary fictional world state and relevant user input.
+
+Validate AI-generated responses and keep game-state changes controlled by application code.
+
+The experience must remain fully playable without an AI API key.
+
+---
+
+# 6. ORIGINAL MYSTERY CAMPAIGN
+
+Build a complete, playable opening campaign called:
+
+**CHAPTER 01 — THE LAST SESSION**
+
+The story begins when the visitor opens an abandoned virtual computer.
+
+The system contains traces of a previous visitor whose identity has disappeared.
+
+The Echo initially claims that it is only a corrupted program.
+
+As the player explores, the evidence suggests that the terminal has been preserving fragments of previous sessions.
+
+The central question is:
+
+**Is the Echo reconstructing a lost user, protecting their memory, or hiding something that happened before the system went silent?**
+
+Do not resolve the entire mystery immediately.
+
+Create a coherent sequence of discoveries that unfolds through command usage.
+
+## Required story artifacts
+
+Create at least:
+- One welcome file.
+- One fictional system log.
+- One ghost interaction log.
+- Four memory fragments.
+- Two hidden files.
+- One suspicious session record.
+- One final chapter artifact.
+- One optional secret artifact.
+
+Each artifact must have a unique ID and consistent narrative content.
+
+The content of the logs, memory fragments, and ghost dialogue must agree with each other.
+
+Do not create contradictory timestamps or unexplained character changes unless they are intentional story clues.
+
+## Story progression
+
+The player should discover the story by exploring files, using commands, talking to the ghost, and completing objectives.
+
+Create narrative flags such as:
+- `found_first_fragment`
+- `read_ghost_log`
+- `discovered_hidden_file`
+- `earned_echo_trust`
+- `unlocked_final_record`
+
+The exact names may differ, but use stable structured flags.
+
+Opening the same file repeatedly must not repeatedly grant rewards.
+
+Important discoveries should be persisted when the player saves progress.
+
+## Multiple endings
+
+Implement at least three endings:
+
+**Ending A — RELEASE**
+
+The player helps the Echo release the remaining memory fragments.
+
+**Ending B — PRESERVE**
+
+The player chooses to preserve the Echo's current state.
+
+**Ending C — THE LOOP**
+
+The player follows the wrong clues or repeatedly ignores a critical warning and discovers a disturbing repeating session.
+
+Endings should result from meaningful choices or story flags, not arbitrary randomness.
+
+Allow the player to review the ending and optionally begin a new playthrough.
+
+---
+
+# 7. MISSION SYSTEM
+
+Build a functional mission system with at least five missions.
+
+### Mission 1: First Contact
+
+Objectives:
+- Initialize the terminal.
+- Run `help`.
+- Run `whoami`.
+- Inspect the welcome file.
+
+Reward:
+- First-contact achievement.
+- New ghost dialogue.
+
+### Mission 2: Something Is Missing
+
+Objectives:
+- Inspect the virtual directory tree.
+- Reveal hidden files.
+- Discover the first memory fragment.
+
+Reward:
+- Unlock the first lore entry.
+
+### Mission 3: The Unfinished Session
+
+Objectives:
+- Read the fictional system log.
+- Inspect the ghost interaction log.
+- Identify a suspicious sequence of events.
+
+Reward:
+- Reveal an additional memory fragment.
+
+### Mission 4: The Echo Remembers
+
+Objectives:
+- Find a hidden artifact.
+- Ask the ghost about its origin.
+- Collect the required memory fragments.
+
+Reward:
+- Increase trust.
+- Unlock the final investigation clue.
+
+### Mission 5: The Last User
+
+Objectives:
+- Discover the suspicious session record.
+- Reconstruct the sequence of events.
+- Make the final narrative decision.
+
+Reward:
+- Unlock the selected ending.
+- Display a completion summary.
+
+Missions must be implemented with actual completion conditions and stored progress.
+
+Show objective status, progress indicators, rewards, and contextual hints.
+
+Do not complete missions simply because the user clicks a mission card.
+
+---
+
+# 8. LORE ARCHIVE AND ACHIEVEMENTS
+
+Create a lore archive that unlocks fictional entries when users discover specific artifacts.
+
+Each lore entry should contain:
+- Title.
+- Discovery condition.
+- Story text.
+- Discovery timestamp, using a consistent simulated or session time model.
+- Locked or unlocked state.
+
+Create achievements such as:
+- First Contact.
+- Hidden in Plain Sight.
+- The Listener.
+- Memory Keeper.
+- Ghost Whisperer.
+- The Last User.
+- Loop Breaker.
+- Root of Nothing.
+
+Achievements must have actual unlock conditions.
+
+For example, the `Root of Nothing` achievement may unlock after safely entering `sudo rm -rf /`. The command must still have no real effect.
+
+Create satisfying visual feedback for achievements without interrupting the terminal unnecessarily.
+
+---
+
+# 9. TERMINAL QUALITY OF LIFE
+
+Implement:
+- Command history.
+- Up/Down navigation through previous commands.
+- Tab completion for recognized commands and paths.
+- Inline syntax hints.
+- Searchable command documentation.
+- Scroll-to-latest-output behavior.
+- Clear-screen functionality.
+- Copyable terminal output.
+- A command suggestion dropdown.
+- A quick-access list of discovered artifacts.
+- Context-sensitive help.
+- Session save and restore.
+- Story reset with confirmation.
+
+Use a proper terminal-output component that preserves whitespace and supports long content.
+
+Do not use a normal chatbot layout as a substitute for the terminal.
+
+Support command input through both keyboard and touch-friendly controls.
+
+---
+
+# 10. SOUND DESIGN
+
+Add optional ambient audio if the environment supports it.
+
+Possible sounds:
+- Low computer hum.
+- Soft key clicks.
+- Subtle electronic interference.
+- A brief discovery sound.
+- A restrained alert when the ghost appears.
+
+Audio must be disabled or silent by default until the user explicitly enables it.
+
+Respect browser autoplay restrictions.
+
+Provide independent controls for ambient audio and interface sound effects.
+
+Never use sudden high-volume sounds, aggressive jump scares, or flashing effects.
+
+If audio assets are unavailable, implement the experience without them rather than using broken placeholder files.
+
+---
+
+# 11. OPTIONAL OPEN-WEIGHT AI INTEGRATION
+
+The project should support an optional open-weight language model without requiring one for the core experience.
+
+Design a provider abstraction that could support a compatible local model server such as Ollama.
+
+Possible configuration:
+- Provider: `Local Ollama`
+- Endpoint: `http://localhost:11434`
+- Model: user-configurable
+- Connection status: Connected, Disconnected, or Not Configured
+
+Do not assume the application can reach the user's local Ollama instance from every deployment environment.
+
+Google AI Studio preview, a hosted web deployment, and a browser on the user's own machine may have different networking restrictions.
+
+Implement the provider connection only when technically supported. Display actionable error messages when unavailable.
+
+Do not expose API keys in client-side source code.
+
+Do not claim that the application uses an open-weight model when it is actually using a closed remote model.
+
+When no model is configured, use the deterministic dialogue engine and provide the complete game experience.
+
+The terminal parser, missions, filesystem, lore, and story progression must not depend on a remote language model.
+
+---
+
+# 12. APPLICATION STATE AND STORAGE
+
+Use typed application state.
+
+Recommended data structures include:
+
+- `VirtualFile`
+- `VirtualDirectory`
+- `TerminalSession`
+- `CommandResult`
+- `GhostState`
+- `Mission`
+- `MissionObjective`
+- `LoreEntry`
+- `Achievement`
+- `StoryFlag`
+- `Ending`
+- `ApplicationSettings`
+
+Store user progress in a suitable browser persistence mechanism.
+
+Use stable IDs and deterministic initial world data.
+
+Persist:
+- Completed missions.
+- Discovered fragments.
+- Unlocked lore.
+- Achievements.
+- Story choices.
+- Ghost trust and mood.
+- Session history where appropriate.
+- Interface preferences.
+
+Do not persist unbounded terminal output indefinitely.
+
+Validate saved data when loading it, handle corrupted storage gracefully, and provide a safe reset option.
+
+Do not claim that browser storage is encrypted or secure against other users of the same device.
+
+---
+
+# 13. TECHNICAL STACK
+
+Use the stack supported by the current Google AI Studio app-building environment.
+
+If it generates React and TypeScript, use:
+- React.
+- TypeScript.
+- Reusable functional components.
+- A centralized command registry.
+- A virtual filesystem module.
+- A mission and narrative state engine.
+- A local persistence module.
+- A consistent CSS design system.
+- Lucide icons where supported.
+
+Separate application logic from UI components.
+
+Suggested modules:
+- `terminal/commandParser`
+- `terminal/commandRegistry`
+- `filesystem/virtualFileSystem`
+- `game/ghostEngine`
+- `game/missionEngine`
+- `game/storyEngine`
+- `game/achievementEngine`
+- `state/persistence`
+- `components/Terminal`
+- `components/GhostPanel`
+- `components/MissionPanel`
+- `components/LoreArchive`
+- `components/Settings`
+
+Adapt the structure to the generated project's conventions rather than creating unnecessary complexity.
+
+Do not install a heavyweight terminal emulator if a custom controlled terminal interface can meet the requirements.
+
+---
+
+# 14. SAFETY AND EXECUTION BOUNDARIES
+
+The terminal is fictional.
+
+All commands must operate exclusively on the virtual filesystem and simulated data.
+
+Never execute commands against Windows, Linux, macOS, WSL, or any real operating system.
+
+Never inspect the host filesystem, real processes, environment variables, network interfaces, or machine credentials.
+
+Never execute uploaded files or AI-generated commands.
+
+Use an explicit allowlist of commands and arguments.
+
+Reject unknown commands safely.
+
+Ensure paths cannot escape the virtual root.
+
+Render all user input and file content as text rather than executable HTML.
+
+The fictional `sudo`, `rm`, `ping`, `ps`, `netstat`, and similar commands must be handled entirely by the simulation engine.
+
+The application should make it clear in its About or Settings section that it is a simulated terminal experience.
+
+---
+
+# 15. RESPONSIVE DESIGN AND ACCESSIBILITY
+
+Ensure:
+- Desktop terminal layout with an optional ghost sidebar.
+- Responsive tablet layout.
+- Usable mobile terminal.
+- Keyboard accessibility.
+- Visible focus indicators.
+- Reduced-motion mode.
+- Readable contrast.
+- Accessible button labels.
+- Screen-reader-friendly mission and achievement updates.
+- No essential information conveyed solely through color.
+
+Keep the interface performant on ordinary computers with integrated graphics.
+
+---
+
+# 16. TESTING REQUIREMENTS
+
+Verify the actual implementation of:
+
+1. Every required command.
+2. Invalid commands and invalid arguments.
+3. Relative and absolute virtual paths.
+4. Hidden file handling.
+5. Virtual filesystem boundary protection.
+6. Command history navigation.
+7. Tab completion.
+8. Mission progression.
+9. Story flags and discoveries.
+10. Achievement unlocks.
+11. Ghost mood transitions.
+12. Save and restore.
+13. Reset confirmation.
+14. Multiple endings.
+15. Offline operation without AI.
+16. AI connection failures when AI is enabled.
+17. Responsive behavior.
+18. Reduced-motion settings.
+19. Malformed persisted state.
+20. The guarantee that no command reaches the real operating system.
+
+Use automated tests where supported and test the UI through the available preview.
+
+Do not report a test as successful unless it was actually executed.
+
+Fix broken buttons, inconsistent story state, console errors, and nonfunctional controls.
+
+---
+
+# 17. FINAL ACCEPTANCE CRITERIA
+
+The application is complete only when:
+
+- A user can enter commands and receive simulated terminal output.
+- The virtual filesystem behaves consistently.
+- The ghost reacts to specific commands and discoveries.
+- Hidden artifacts can be discovered.
+- At least five missions can be completed.
+- Lore entries unlock correctly.
+- Achievements unlock based on actual actions.
+- Story progress survives a reload.
+- Three different endings can be reached.
+- The experience works without an AI API key.
+- The interface is polished, responsive, and accessible.
+- No command is executed on the real host.
+- The app contains a coherent, original narrative.
+- A first-time visitor can understand how to begin playing.
+
+# 18. HOW TO BUILD
+
+Build the application directly in the current Google AI Studio project.
+
+Work in this order:
+1. Establish the application structure and visual design.
+2. Implement the virtual filesystem and command parser.
+3. Implement the terminal interface and command history.
+4. Implement the ghost personality engine.
+5. Implement missions, lore, achievements, and story flags.
+6. Implement narrative branching and endings.
+7. Implement persistence and settings.
+8. Add optional AI integration only after the deterministic application works.
+9. Test the complete user journey.
+10. Fix defects and polish the interface.
+
+Do not stop after creating the first screen.
+
+Do not replace functional logic with placeholder buttons or hardcoded dashboard statistics.
+
+If the project becomes too large for one generation pass, implement the highest-priority complete vertical slice first: terminal input, command parsing, virtual filesystem, ghost reactions, one playable mission, and persistent progress. Then continue expanding the same application without discarding working features.
+
+## FINAL PRODUCT VISION
+
+PHANTOM SHELL should feel like an interactive mystery hidden inside a forgotten computer.
+
+A player arrives curious, discovers the ghost, explores the virtual machine, finds fragments of a missing user, earns the ghost's trust, uncovers an unsettling history, and ultimately decides what happens to the Echo.
+
+Every command should make the terminal feel more alive.
+
+Every discovery should reveal something meaningful.
+
+Every feature must be functional.
+
+**Build PHANTOM SHELL now as a complete, playable, original haunted-terminal experience.**
